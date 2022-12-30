@@ -1,4 +1,5 @@
 "use strict";
+console.log("Aki" + toNumber(1));
 var input = document.querySelector("input");
 if (input)
     input.addEventListener("keyup", TotalMudou);
@@ -17,4 +18,11 @@ function TotalMudou() {
         localStorage.setItem("Total", String(value_1));
         calculaGanho(value_1);
     }
+}
+function toNumber(value) {
+    if (typeof value === "number")
+        return value;
+    if (typeof value === "string")
+        return Number(value);
+    throw "A função deve receber um número ou uma string";
 }
