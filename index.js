@@ -1,28 +1,54 @@
 "use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-function fetchProduct() {
-    return __awaiter(this, void 0, void 0, function* () {
-        const response = yield fetch('https://api.origamid.dev/json/notebook.json');
-        const data = yield response.json();
-        showProduct(data);
-    });
-}
-fetchProduct();
-function showProduct(data) {
-    document.body.innerHTML = `
-      <div>
-        <h2>${data.nome}</h2>
-      </div>
-    `;
-}
+const link = document.getElementById("origamid");
+if (link instanceof HTMLAnchorElement)
+    link.href = link.href.replace("http", "https");
+// interface API{
+//   nome : string,
+//   horas: number,
+//   aulas: number,
+//   gratuito: boolean,
+//   tags: string[],
+//   idAulas: number[],
+//   nivel: "iniciante" | "avancado"
+// }
+// async function fetchCursos() {
+//   const response = await fetch('https://api.origamid.dev/json/cursos.json');
+//   const data = await response.json();
+//   mostrarCursos(data);
+// }
+// fetchCursos();
+// function mostrarCursos(cursos:API[]) {
+// cursos.forEach(c => {
+//   let color;
+//   if(c.nivel === "avancado") color = "red";
+//   if(c.nivel === "iniciante") color = "blue";
+//   document.body.innerHTML +=`
+//   <div>
+//     <h1 style = "color:${color}">${c.nome}</h1>
+//     <p>Tipo: ${c.gratuito?"Gratuito":"Pago"}<p>
+//     <p>Total de Aulas ${c.aulas}</p>
+//     <p>Total de Horas ${c.horas}</p>
+//     <p>Tags: ${c.tags.join(", ")}</p>
+//     <p>Aulas: ${c.idAulas.join("| ")}</p>
+//   </div>
+//   `
+// })
+// }
+// async function fetchProduct():Promise<void> {
+//     const response = await fetch('https://api.origamid.dev/json/notebook.json');
+//     const data = await response.json();
+//     showProduct(data);
+//   }
+//   fetchProduct();
+//   function showProduct(data:{
+//     nome:string
+//   }) {
+//     document.body.innerHTML = `
+//       <div>
+//         <h2>${data.nome}</h2>
+//       </div>
+//     `;
+//   }
 // preencherDados({});
 // function preencherDados(dados:{}){
 //     document.body.innerHTML = `

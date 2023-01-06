@@ -1,21 +1,88 @@
+const link = document.getElementById("origamid");
 
-async function fetchProduct():Promise<void> {
-    const response = await fetch('https://api.origamid.dev/json/notebook.json');
-    const data = await response.json();
-    showProduct(data);
-  }
+if(link instanceof HTMLAnchorElement) link.href = link.href.replace("http","https");
+
+
+
+
+
+
+
+
+
+
+
+// interface API{
+//   nome : string,
+//   horas: number,
+//   aulas: number,
+//   gratuito: boolean,
+//   tags: string[],
+//   idAulas: number[],
+//   nivel: "iniciante" | "avancado"
+// }
+
+// async function fetchCursos() {
+//   const response = await fetch('https://api.origamid.dev/json/cursos.json');
+//   const data = await response.json();
+//   mostrarCursos(data);
+// }
+
+// fetchCursos();
+
+// function mostrarCursos(cursos:API[]) {
   
-  fetchProduct();
+// cursos.forEach(c => {
+
+//   let color;
+
+//   if(c.nivel === "avancado") color = "red";
+//   if(c.nivel === "iniciante") color = "blue";
+
+//   document.body.innerHTML +=`
+//   <div>
+//     <h1 style = "color:${color}">${c.nome}</h1>
+//     <p>Tipo: ${c.gratuito?"Gratuito":"Pago"}<p>
+//     <p>Total de Aulas ${c.aulas}</p>
+//     <p>Total de Horas ${c.horas}</p>
+//     <p>Tags: ${c.tags.join(", ")}</p>
+//     <p>Aulas: ${c.idAulas.join("| ")}</p>
+//   </div>
+//   `
+// })
   
-  function showProduct(data:{
-    nome:string
-  }) {
-    document.body.innerHTML = `
-      <div>
-        <h2>${data.nome}</h2>
-      </div>
-    `;
-  }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// async function fetchProduct():Promise<void> {
+//     const response = await fetch('https://api.origamid.dev/json/notebook.json');
+//     const data = await response.json();
+//     showProduct(data);
+//   }
+  
+//   fetchProduct();
+  
+//   function showProduct(data:{
+//     nome:string
+//   }) {
+//     document.body.innerHTML = `
+//       <div>
+//         <h2>${data.nome}</h2>
+//       </div>
+//     `;
+//   }
 
 
 
