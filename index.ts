@@ -1,6 +1,27 @@
-const link = document.getElementById("origamid");
+const links = document.querySelectorAll(".link");
 
-if(link instanceof HTMLAnchorElement) link.href = link.href.replace("http","https");
+links.forEach(link => {
+    if (link instanceof HTMLElement)  ativarElemento(link);
+})
+
+
+function ativarElemento(link:HTMLElement){
+    link.style.cssText =
+    'color: blue;' +
+    'background-color: yellow;' +
+    'border: 1px solid magenta';
+}
+
+
+
+
+
+
+
+
+// const link = document.getElementById("origamid");
+
+// if(link instanceof HTMLAnchorElement) link.href = link.href.replace("http","https");
 
 
 
