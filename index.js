@@ -1,15 +1,27 @@
 "use strict";
-const links = document.querySelectorAll(".link");
-links.forEach(link => {
-    if (link instanceof HTMLElement)
-        ativarElemento(link);
-});
-function ativarElemento(link) {
-    link.style.cssText =
-        'color: blue;' +
-            'background-color: yellow;' +
-            'border: 1px solid magenta';
+const btnMobile = document.querySelector("#btn-mobile");
+if (btnMobile instanceof HTMLButtonElement) {
+    btnMobile.addEventListener("click", handleClick);
 }
+function handleClick(event) {
+    console.log(event);
+    const nav = document.querySelector("#nav");
+    if (nav instanceof HTMLElement)
+        nav.classList.toggle("active");
+    if (event.currentTarget instanceof HTMLElement) {
+        event.currentTarget.setAttribute("aria-expanded", "false");
+    }
+}
+// const links = document.querySelectorAll(".link");
+// links.forEach(link => {
+//     if (link instanceof HTMLElement)  ativarElemento(link);
+// })
+// function ativarElemento(link:HTMLElement){
+//     link.style.cssText =
+//     'color: blue;' +
+//     'background-color: yellow;' +
+//     'border: 1px solid magenta';
+// }
 // const link = document.getElementById("origamid");
 // if(link instanceof HTMLAnchorElement) link.href = link.href.replace("http","https");
 // interface API{
