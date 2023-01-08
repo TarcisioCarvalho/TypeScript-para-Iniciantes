@@ -4,12 +4,22 @@ if (btnMobile instanceof HTMLButtonElement) {
     btnMobile.addEventListener("click", handleClick);
 }
 function handleClick(event) {
-    console.log(event);
-    const nav = document.querySelector("#nav");
-    if (nav instanceof HTMLElement)
-        nav.classList.toggle("active");
-    if (event.currentTarget instanceof HTMLElement) {
-        event.currentTarget.setAttribute("aria-expanded", "false");
+    if (event.currentTarget instanceof EventTarget) {
+        const button = event.currentTarget;
+        const nav = document.querySelector("#nav");
+        if (nav instanceof HTMLElement) {
+            const active = nav.classList.toggle("active");
+            if (button instanceof HTMLButtonElement) {
+                if (active) {
+                    button.setAttribute('aria-expanded', 'true');
+                    button.setAttribute('aria-label', 'Fechar Menu');
+                    return;
+                }
+                button.setAttribute('aria-expanded', 'false');
+                button.setAttribute('aria-label', 'Abrir Menu');
+            }
+        }
+        ;
     }
 }
 // const links = document.querySelectorAll(".link");
