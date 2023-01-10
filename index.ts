@@ -9,8 +9,6 @@ function handleClick(event:Event){
        if(event.currentTarget instanceof EventTarget){
 
         const button = event.currentTarget;
-       
-   
         const nav = document.querySelector("#nav");
 
         if(nav instanceof HTMLElement) {
