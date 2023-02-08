@@ -1,4 +1,15 @@
-const btnMobile = document.querySelector("#btn-mobile");
+
+function Arredondar(value:string):string;
+function Arredondar(value:number):number;
+function Arredondar(value : number | string){
+    if(typeof(value) === "number") return Math.ceil(value);
+    return String(Math.ceil(Number(value)));
+}
+console.log(Arredondar("4.6"));
+
+
+
+/* const btnMobile = document.querySelector("#btn-mobile");
 
 if(btnMobile instanceof HTMLButtonElement){
     btnMobile.addEventListener("click",handleClick)
@@ -29,7 +40,7 @@ function handleClick(event:Event){
 
        
     
-}
+} */
 
 
 

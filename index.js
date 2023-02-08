@@ -1,16 +1,28 @@
 "use strict";
-const btnMobile = document.querySelector("#btn-mobile");
-if (btnMobile instanceof HTMLButtonElement) {
-    btnMobile.addEventListener("click", handleClick);
+function Arredondar(value) {
+    if (typeof (value) === "number")
+        return Math.ceil(value);
+    return String(Math.ceil(Number(value)));
 }
-function handleClick(event) {
-    if (event.currentTarget instanceof EventTarget) {
+console.log(Arredondar("4.6"));
+/* const btnMobile = document.querySelector("#btn-mobile");
+
+if(btnMobile instanceof HTMLButtonElement){
+    btnMobile.addEventListener("click",handleClick)
+}
+
+function handleClick(event:Event){
+
+       if(event.currentTarget instanceof EventTarget){
+
         const button = event.currentTarget;
         const nav = document.querySelector("#nav");
-        if (nav instanceof HTMLElement) {
+
+        if(nav instanceof HTMLElement) {
+
             const active = nav.classList.toggle("active");
-            if (button instanceof HTMLButtonElement) {
-                if (active) {
+            if(button instanceof HTMLButtonElement){
+                if(active) {
                     button.setAttribute('aria-expanded', 'true');
                     button.setAttribute('aria-label', 'Fechar Menu');
                     return;
@@ -18,10 +30,13 @@ function handleClick(event) {
                 button.setAttribute('aria-expanded', 'false');
                 button.setAttribute('aria-label', 'Abrir Menu');
             }
-        }
-        ;
+           
+        };
     }
-}
+
+       
+    
+} */
 // const links = document.querySelectorAll(".link");
 // links.forEach(link => {
 //     if (link instanceof HTMLElement)  ativarElemento(link);
