@@ -1,11 +1,51 @@
 
-function Arredondar(value:string):string;
+async function fetchCursos() {
+    const response = await fetch("https://api.origamid.dev/json/cursos.json");
+    const json = await response.json();
+    handleCursos(json);
+}
+
+fetchCursos();
+
+interface Curso{
+    nome:string;
+    horas:number;
+    tags:string[];
+}
+
+function isCurso(value:unknown): value is Curso {
+    if(value &&
+        typeof value === "object" &&
+         "nome" in value &&
+         "horas" in value &&
+         "tags" in value
+    ) {
+        return true
+    }
+    return false;
+}
+
+function handleCursos(data:unknown){
+    if(isCurso(data))
+    {
+        if(typeof data.nome === "string" &&
+           typeof data.horas === "number" &&
+           data.tags instanceof Array
+        )
+        {
+            console.log(`Cursos `);
+        }
+    }
+}
+
+
+/* function Arredondar(value:string):string;
 function Arredondar(value:number):number;
 function Arredondar(value : number | string){
     if(typeof(value) === "number") return Math.ceil(value);
     return String(Math.ceil(Number(value)));
 }
-console.log(Arredondar("4.6"));
+console.log(Arredondar("4.6")); */
 
 
 

@@ -1,10 +1,47 @@
 "use strict";
-function Arredondar(value) {
-    if (typeof (value) === "number")
-        return Math.ceil(value);
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+function fetchCursos() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const response = yield fetch("https://api.origamid.dev/json/cursos.json");
+        const json = yield response.json();
+        handleCursos(json);
+    });
+}
+fetchCursos();
+function isCurso(value) {
+    if (value &&
+        typeof value === "object" &&
+        "nome" in value &&
+        "horas" in value &&
+        "tags" in value) {
+        return true;
+    }
+    return false;
+}
+function handleCursos(data) {
+    if (isCurso(data)) {
+        if (typeof data.nome === "string" &&
+            typeof data.horas === "number" &&
+            data.tags instanceof Array) {
+            console.log(`Cursos `);
+        }
+    }
+}
+/* function Arredondar(value:string):string;
+function Arredondar(value:number):number;
+function Arredondar(value : number | string){
+    if(typeof(value) === "number") return Math.ceil(value);
     return String(Math.ceil(Number(value)));
 }
-console.log(Arredondar("4.6"));
+console.log(Arredondar("4.6")); */
 /* const btnMobile = document.querySelector("#btn-mobile");
 
 if(btnMobile instanceof HTMLButtonElement){
