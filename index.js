@@ -27,13 +27,24 @@ function isCurso(value) {
     return false;
 }
 function handleCursos(data) {
-    if (isCurso(data)) {
-        if (typeof data.nome === "string" &&
-            typeof data.horas === "number" &&
-            data.tags instanceof Array) {
+    if (Array.isArray(data)) {
+        data
+            .filter(isCurso)
+            .forEach(curso => document.body.innerHTML += `
+            <h2>Nome: ${curso.nome}</h2>
+            <p>Aulas : ${curso.aulas}</p>
+        `);
+    }
+    /* if(isCurso(data))
+    {
+        if(typeof data.nome === "string" &&
+           typeof data.horas === "number" &&
+           data.tags instanceof Array
+        )
+        {
             console.log(`Cursos `);
         }
-    }
+    } */
 }
 /* function Arredondar(value:string):string;
 function Arredondar(value:number):number;

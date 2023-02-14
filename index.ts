@@ -9,7 +9,11 @@ fetchCursos();
 
 interface Curso{
     nome:string;
+    aulas:number;
+    gratuito:boolean;
     horas:number;
+    idAulas: number[];
+    nivel:"iniciante"|"avançado";
     tags:string[];
 }
 
@@ -26,7 +30,15 @@ function isCurso(value:unknown): value is Curso {
 }
 
 function handleCursos(data:unknown){
-    if(isCurso(data))
+    if(Array.isArray(data)){
+        data
+        .filter(isCurso)
+        .forEach(curso => document.body.innerHTML+= `
+            <h2>Nome: ${curso.nome}</h2>
+            <p>Aulas : ${curso.aulas}</p>
+        `)
+    }
+    /* if(isCurso(data))
     {
         if(typeof data.nome === "string" &&
            typeof data.horas === "number" &&
@@ -35,7 +47,7 @@ function handleCursos(data:unknown){
         {
             console.log(`Cursos `);
         }
-    }
+    } */
 }
 
 
