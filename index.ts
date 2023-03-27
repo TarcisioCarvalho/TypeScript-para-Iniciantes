@@ -16,10 +16,27 @@ function firstFive<T>(lista:T[]){
 
 console.log(firstFive(frutas)); */
 
-function notNull<T>(a:T){
-    if(a !== null) return a;
-    return null;
+// function notNull<T>(a:T){
+//     if(a !== null) return a;
+//     return null;
+// }
+
+// notNull("Teste")?.length;
+// notNull(33)?.toFixed();
+
+interface Forma{
+    lado:number;
+    perimetro(lado:number) : number
 }
 
-notNull("Teste")?.length;
-notNull(33)?.toFixed();
+
+function Calcula(forma:Forma){
+    console.log(forma.perimetro(4))
+}
+
+Calcula({
+    lado:10,
+    perimetro(lado) {
+        return lado*4
+    },
+});
