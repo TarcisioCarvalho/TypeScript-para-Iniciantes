@@ -15,3 +15,7 @@ Calcula({
         return lado * 4;
     },
 });
+function $(seletor) {
+    return document.querySelector(seletor);
+}
+console.log($("a"));

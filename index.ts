@@ -40,3 +40,10 @@ Calcula({
         return lado*4
     },
 });
+
+function $(seletor:'a'):HTMLAnchorElement | null
+function $(seletor:string):Element | null{
+    return document.querySelector(seletor);
+}
+
+console.log($("a"));
