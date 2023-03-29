@@ -19,3 +19,4 @@ function $(seletor) {
     return document.querySelector(seletor);
 }
 console.log($("a"));
+console.log($("video"));
