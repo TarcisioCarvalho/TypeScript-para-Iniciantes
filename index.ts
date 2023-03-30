@@ -43,9 +43,11 @@ Calcula({
 
 function $(seletor:'a'):HTMLAnchorElement | null
 function $(seletor:"video"):HTMLVideoElement | null
+function $(seletor:"audio"): HTMLAudioElement | null
 function $(seletor:string):Element | null{
     return document.querySelector(seletor);
 }
 
 console.log($("a"));
 console.log($("video"));
+console.log($("audio")?.volume);

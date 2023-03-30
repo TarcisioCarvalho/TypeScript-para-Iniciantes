@@ -6,6 +6,7 @@
 }
 
 console.log(retorno("A Game")); */
+var _a;
 function Calcula(forma) {
     console.log(forma.perimetro(4));
 }
@@ -20,3 +21,4 @@ function $(seletor) {
 }
 console.log($("a"));
 console.log($("video"));
+console.log((_a = $("audio")) === null || _a === void 0 ? void 0 : _a.volume);
