@@ -22,3 +22,4 @@ function $(seletor) {
 console.log($("a"));
 console.log($("video"));
 console.log((_a = $("audio")) === null || _a === void 0 ? void 0 : _a.volume);
+console.log($("img"));
