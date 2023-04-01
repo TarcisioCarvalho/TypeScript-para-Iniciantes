@@ -45,6 +45,7 @@ function $(seletor:'a'):HTMLAnchorElement | null
 function $(seletor:"video"):HTMLVideoElement | null
 function $(seletor:"audio"): HTMLAudioElement | null
 function $(seletor:"img"): HTMLImageElement | null
+function $(seletor:"button"): HTMLButtonElement | null
 function $(seletor:string):Element | null{
     return document.querySelector(seletor);
 }
@@ -53,3 +54,4 @@ console.log($("a"));
 console.log($("video"));
 console.log($("audio")?.volume);
 console.log($("img"));
+console.log($("button"))
