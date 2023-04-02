@@ -24,3 +24,4 @@ console.log($("video"));
 console.log((_a = $("audio")) === null || _a === void 0 ? void 0 : _a.volume);
 console.log($("img"));
 console.log($("button"));
+console.log($("form"));
