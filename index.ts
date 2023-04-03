@@ -47,6 +47,7 @@ function $(seletor:"audio"): HTMLAudioElement | null
 function $(seletor:"img"): HTMLImageElement | null
 function $(seletor:"button"): HTMLButtonElement | null
 function $(seletor:"form"): HTMLFormElement | null
+function $(seletor:"div"):HTMLDivElement | null
 function $(seletor:string):Element | null{
     return document.querySelector(seletor);
 }
@@ -57,3 +58,4 @@ console.log($("audio")?.volume);
 console.log($("img"));
 console.log($("button"));
 console.log($("form"));
+console.log($("div"));
