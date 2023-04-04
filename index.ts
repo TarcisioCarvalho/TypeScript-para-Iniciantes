@@ -48,6 +48,7 @@ function $(seletor:"img"): HTMLImageElement | null
 function $(seletor:"button"): HTMLButtonElement | null
 function $(seletor:"form"): HTMLFormElement | null
 function $(seletor:"div"):HTMLDivElement | null
+function $(seletor:"input"):HTMLInputElement | null
 function $(seletor:string):Element | null{
     return document.querySelector(seletor);
 }
@@ -59,3 +60,4 @@ console.log($("img"));
 console.log($("button"));
 console.log($("form"));
 console.log($("div"));
+console.log($("input"));

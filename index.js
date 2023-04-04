@@ -26,3 +26,4 @@ console.log($("img"));
 console.log($("button"));
 console.log($("form"));
 console.log($("div"));
+console.log($("input"));
