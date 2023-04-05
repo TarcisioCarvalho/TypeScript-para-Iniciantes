@@ -1,3 +1,20 @@
+function Arredonda(value:string):string
+function Arredonda(value:number):number
+function Arredonda(value:number | string):number | string | undefined{
+    switch (typeof value) {
+        case "number":
+            console.log(typeof value);
+            return Math.ceil(value);
+        case "string":
+            console.log(typeof value);
+            return Math.ceil(Number(value)).toString();
+        default:
+            break;
+    }
+}
+console.log(Arredonda(3.6));
+console.log(Arredonda("3.4"));
+
 
 /* function retorno<T>(a:T):T{
     if( typeof a === "string") return a;
@@ -24,7 +41,7 @@ console.log(firstFive(frutas)); */
 // notNull("Teste")?.length;
 // notNull(33)?.toFixed();
 
-interface Forma{
+/* interface Forma{
     lado:number;
     perimetro(lado:number) : number
 }
@@ -60,4 +77,4 @@ console.log($("img"));
 console.log($("button"));
 console.log($("form"));
 console.log($("div"));
-console.log($("input"));
+console.log($("input")); */
